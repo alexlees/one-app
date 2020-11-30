@@ -1,0 +1,32 @@
+{
+  "miniprogramRoot": "dist/wechat/",
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "scopeDataCheck": false
+  },
+  "compileType": "miniprogram",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "appid": "wxda09f6e47fd8e8bd",
+  "projectname": "one-app",
+  "libVersion": "2.9.5",
+  "condition": {}
+}

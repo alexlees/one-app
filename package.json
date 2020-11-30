@@ -1,0 +1,59 @@
+{
+  "name": "one-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "one-weapp",
+  "main": "index.js",
+  "keywords": [],
+  "author": "alexlees",
+  "license": "MIT",
+  "scripts": {
+    "dev": "remax build -w -t wechat",
+    "build": "cross-env NODE_ENV=production REMAX_APP_RELEASE_ENV=prod remax build -t wechat",
+    "analyzer": "cross-env NODE_ENV=production REMAX_APP_RELEASE_ENV=analyzer remax build -t wechat",
+    "build:dev": "cross-env NODE_ENV=production REMAX_APP_RELEASE_ENV=dev remax build -t wechat",
+    "commit": "lint-staged && export HUSKY_SKIP_HOOKS=1 && git-cz",
+    "release": "standard-version && npm run pushTags",
+    "pushTags": "git push origin --tags"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json,ts,tsx}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "remax": "^2.9.0"
+  },
+  "devDependencies": {
+    "@one-style/commit": "^0.1.1",
+    "@one-style/eslint": "^0.1.1",
+    "@one-style/prettier": "^0.1.1",
+    "@remax/plugin-less": "^1.0.0",
+    "@types/react": "^17.0.0",
+    "cross-env": "^7.0.2",
+    "eslint-webpack-plugin": "^2.4.0",
+    "typescript": "^4.1.2",
+    "webpack-bundle-analyzer": "^4.1.0"
+  }
+}
